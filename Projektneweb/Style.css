@@ -98,6 +98,7 @@ body {
     flex-direction: row ;
     align-items: center;
     padding-top: 20px; 
+    margin-bottom: 50px;
 }
 .product-container-3 {
     display: flex;  
@@ -214,3 +215,53 @@ footer ul li {
 .buy-button:hover {
     background-color: #dd410e;
 }
+
+/* home.html */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+.about{
+    background-color: rgb(164, 168, 168);
+    padding: 75px 150px;
+    border: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.about h2{
+    margin-bottom: 1.5rem;
+}
+
+section h2 {
+    font-size: 2rem;
+
+}
+
+/* Services */
+.services {
+    padding: 20px 0px;
+}
+.services h2 {
+    margin-bottom: 1.5rem;
+}
+
+.service-card-1 {
+    background-color: rgb(164, 168, 168);
+    padding:75px 150px;
+    border: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.ourproducts{
+
+    text-align: center;
+}
+.ourproducts h2{
+    margin-bottom: 1.5rem;
+    
+}
+
+/* Contact */
+
+
