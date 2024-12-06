@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <p>Pershendetje!</p>
-    <div>
-        <h1>login</h1>
-    </div>
-    <form action="">
-        <label for="username">username</label>
-        <input type="text" name="Emri" id="username" placeholder="Spongebob" minlength="6" maxlength="20" required><br>
-        
-        
-        <label for="password">password</label>
-        <input type="password" id="password"><br>
-      
-      
-      <input type="reset" >
-        <input type="submit">
+    <link rel="stylesheet" href="Login.css" />
+  </head>
+  <body>
+    
+    <div class="contaniner">
+        <br>
+      <h1 id="Login">Login</h1>
+      <br>
+      <form action="">
+        <label for="username" class="pass"><b>Username:</b></label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+        />
+        <label for="passowrd" class="pass"><b>Password:</b></label>
+        <input
+          type="password"
+          name="passowrd"
+          id="passowrd"
+          placeholder="Password"
+        />
+
+        <button id="button">Submit</button>
       </form>
-</body>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
