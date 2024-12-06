@@ -8,7 +8,7 @@ body {
     background: #455065;
     border: 0.5px solid #313b4e;
     width: 400px;
-    height: 280px;
+    height: 500px;
     margin: 300px auto;
     border-radius: 20px;
     box-shadow: 7px 7px 17px #3b4456, -7px -7px 17px #4f5c74;
@@ -22,7 +22,7 @@ body {
   #Login {
     margin: 0 auto;
     margin-top: 20px;
-    color: lightgrey;
+    color: white;
   }
   
   #username {
@@ -50,17 +50,16 @@ body {
     margin-top: 25px;
     border-radius: 15px;
     margin-bottom: 12px;
-    background-color: lightgray;
+    background-color: white;
     
   }
   .pass {
     padding-left: 65px;
     margin-top: 7px;
     font-size: 19px;
-    color: lightgrey;
+    color: white;
   }
-  #paragraf{
+  #para{
     color: white;
     padding-left: 61px;
-
   }
