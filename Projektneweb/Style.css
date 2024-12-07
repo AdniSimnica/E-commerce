@@ -379,3 +379,14 @@ footer ul li a:hover {
     background-color: #0056b3;
     transform: scale(1.05);
 }
+#login{
+    width: 110px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-left: 45px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    background-color: #555;
+    color: #ccc;
+}
