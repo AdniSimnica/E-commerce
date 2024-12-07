@@ -1,17 +1,20 @@
 body {
-    background: #455065;
-  }
+  background: url("web.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+
   
   .contaniner {
     display: flex;
     flex-direction: column;
-    background: #455065;
-    border: 0.5px solid #313b4e;
+    background: #c5c5c5;
+    border: 0.5px solid #414141;
     width: 400px;
     height: 500px;
     margin: 300px auto;
     border-radius: 20px;
-    box-shadow: 7px 7px 17px #3b4456, -7px -7px 17px #4f5c74;
+    box-shadow: 7px 7px 17px #303030, -7px -7px 17px #b9b9b9;
   }
   
   form {
@@ -54,9 +57,9 @@ body {
     margin-top: 25px;
     border-radius: 15px;
     margin-bottom: 12px;
-    background-color: #6d7b96;
+    background-color: #a1a1a1;
     color: white;
-    box-shadow: 7px 7px 17px #131313, -2px -2px #4f5c74;
+    box-shadow: 5px 5px 12px #000000, -2px -2px #4f5c74;
     
   }
   .pass {
