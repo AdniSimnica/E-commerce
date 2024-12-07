@@ -35,6 +35,7 @@ main {
     justify-content: space-between;
     z-index: 100;
     margin-bottom: 20px;
+    height: 80px;
 }
 
 /* Logo */
@@ -389,4 +390,17 @@ footer ul li a:hover {
     margin-bottom: 12px;
     background-color: #555;
     color: #ccc;
+}
+#foto{
+    height: 800px;
+}
+#well{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 100px;
+    text-align: center;
+}
+#logoja{
+    height: 55px;
 }
