@@ -183,9 +183,9 @@ footer ul li {
 /* Button styles */
 button {
 
-    margin-right: 0px;
-    /* padding: 15px 30px; */
-    font-size: 20px;
+    
+    padding: 15px 30px;
+    font-size: 16px;
     color: #fff;
     background-color: #007bff;
     border: none;
@@ -195,7 +195,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: orange;
     transform: scale(1.05);
 }
 
@@ -231,7 +231,6 @@ section {
     font-size: 36px;
     margin-top: -40px;
 }
-
 /* Slider styles */
 .slider {
     width: 100%;
