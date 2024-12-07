@@ -122,6 +122,27 @@ body{
     width: 100%;
 }
 
+.product-details-container {
+    display: flex; /* Përdor Flexbox për layout horizontal */
+    align-items: flex-start; /* Vendos div-et sipas fillimit vertikal */
+    gap: 20px; /* Hapësirë ndërmjet fotos dhe tekstit */
+    padding: 20px;
+    margin: 20px;
+}
+
+.product-image-p2 img {
+    max-width: 300px; /* Përmasa e fotos */
+    height: auto; /* Ruaj raportin e duhur të fotos */
+    border-radius: 10px; /* Dizajni i këndshëm */
+}
+
+.product-info {
+    flex: 1; /* Merr hapësirën që mbetet */
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
 /* Product container */
 .product-container-1, .product-container-2, .product-container-3 {
     display: flex;
