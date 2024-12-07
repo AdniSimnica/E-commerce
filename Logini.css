@@ -13,6 +13,7 @@ body {
     border-radius: 20px;
     box-shadow: 7px 7px 17px #3b4456, -7px -7px 17px #4f5c74;
   }
+  
   form {
     display: flex;
     flex-direction: column;
@@ -29,18 +30,21 @@ body {
     width: 270px;
     height: 30px;
     margin: 0 auto;
-    /* margin-top: 5px; */
+    margin-top: 2px;
     border-radius: 10px;
     border: 0px;
+    
   }
   
   #passowrd {
     width: 270px;
     height: 30px;
     margin: 0 auto;
-    /* margin-top: 5px; */
+
+    margin-top: 2px; 
     border-radius: 10px;
     border: 0px;
+    
   }
   
   #button {
@@ -50,7 +54,9 @@ body {
     margin-top: 25px;
     border-radius: 15px;
     margin-bottom: 12px;
-    background-color:#72819c;
+    background-color: #6d7b96;
+    color: white;
+    box-shadow: 7px 7px 17px #131313, -2px -2px #4f5c74;
     
   }
   .pass {
