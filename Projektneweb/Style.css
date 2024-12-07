@@ -22,24 +22,27 @@ main {
     flex: 1;
     width: 80%;
 }
+body{
+    margin: 0px;
 
+}
 /* Navbar */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 0px;
     padding: 15px 100px;
     background: gray;
     display: flex;
-    justify-content: space-between;
     z-index: 100;
-    margin-bottom: 20px;
-    height: 80px;
+    height: 90px;
 }
 
 /* Logo */
 .logo {
+    margin-left: 100px;
     font-size: 32px;
     font-weight: 500;
     color: blanchedalmond;
@@ -53,11 +56,16 @@ main {
 
 /* Navbar links */
 .navbar {
+    margin: 0 auto;
+    justify-content: center;
     display: flex;
+
     font-weight: 500;
 }
 
 .navbar a {
+    margin-top: 20px;
+    
     position: relative;
     font-size: 18px;
     text-decoration: none;
@@ -68,6 +76,7 @@ main {
 /* Dropdown Menu */
 .category {
     position: relative;
+    margin-top: 20px;
 }
 
 .category:hover .dropdown {
@@ -173,8 +182,10 @@ footer ul li {
 
 /* Button styles */
 button {
-    padding: 15px 30px;
-    font-size: 16px;
+
+    margin-right: 0px;
+    /* padding: 15px 30px; */
+    font-size: 20px;
     color: #fff;
     background-color: #007bff;
     border: none;
@@ -392,6 +403,7 @@ footer ul li a:hover {
     color: #ccc;
 }
 #foto{
+    margin-top: 0px;
     height: 800px;
 }
 #well{
