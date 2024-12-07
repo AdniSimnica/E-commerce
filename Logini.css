@@ -72,3 +72,43 @@ body {
     color: white;
     padding-left: 61px;
   }
+  #firstName {
+    width: 270px;
+    height: 30px;
+    margin: 0 auto;
+
+    margin-top: 2px; 
+    border-radius: 10px;
+    border: 0px;
+    
+  }
+  #lastName {
+    width: 270px;
+    height: 30px;
+    margin: 0 auto;
+
+    margin-top: 2px; 
+    border-radius: 10px;
+    border: 0px;
+    
+  }
+  #email {
+    width: 270px;
+    height: 30px;
+    margin: 0 auto;
+
+    margin-top: 2px; 
+    border-radius: 10px;
+    border: 0px;
+    
+  }
+  #password {
+    width: 270px;
+    height: 30px;
+    margin: 0 auto;
+
+    margin-top: 2px; 
+    border-radius: 10px;
+    border: 0px;
+    
+  }
