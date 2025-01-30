@@ -438,3 +438,118 @@ footer ul li a:hover {
 #logoja{
     height: 55px;
 }
+body {
+    background: url("web.png") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  
+    
+  .container { /* Fix the typo */
+    display: flex;
+    flex-direction: column;
+    background: #c5c5c5;
+    border: 0.5px solid #414141;
+    width: 400px;
+    height: 500px;
+    margin: 300px auto;
+    border-radius: 20px;
+    box-shadow: 7px 7px 17px #303030, -7px -7px 17px #b9b9b9;
+  }
+  
+    
+    form {
+      display: flex;
+      flex-direction: column;
+    
+      width: 100%;
+    }
+    #Login {
+      margin: 0 auto;
+      margin-top: 20px;
+      color: white;
+    }
+    
+    #username {
+      width: 270px;
+      height: 30px;
+      margin: 0 auto;
+      margin-top: 2px;
+      border-radius: 10px;
+      border: 0px;
+      
+    }
+    
+    #password {
+      width: 270px;
+      height: 30px;
+      margin: 0 auto;
+  
+      margin-top: 2px; 
+      border-radius: 10px;
+      border: 0px;
+      
+    }
+    
+    #button {
+      width: 120px;
+      height: 40px;
+      margin: 0 auto;
+      margin-top: 25px;
+      border-radius: 15px;
+      margin-bottom: 12px;
+      background-color: #a1a1a1;
+      color: white;
+      box-shadow: 5px 5px 12px #000000, -2px -2px #4f5c74;
+      
+    }
+    .pass {
+      padding-left: 65px;
+      margin-top: 7px;
+      font-size: 19px;
+      color: white;
+    }
+    #para{
+      color: white;
+      padding-left: 61px;
+    }
+    #firstName {
+      width: 270px;
+      height: 30px;
+      margin: 0 auto;
+  
+      margin-top: 2px; 
+      border-radius: 10px;
+      border: 0px;
+      
+    }
+    #lastName {
+      width: 270px;
+      height: 30px;
+      margin: 0 auto;
+  
+      margin-top: 2px; 
+      border-radius: 10px;
+      border: 0px;
+      
+    }
+    #email {
+      width: 270px;
+      height: 30px;
+      margin: 0 auto;
+  
+      margin-top: 2px; 
+      border-radius: 10px;
+      border: 0px;
+      
+    }
+    #password {
+      width: 270px;
+      height: 30px;
+      margin: 0 auto;
+  
+      margin-top: 2px; 
+      border-radius: 10px;
+      border: 0px;
+      
+    }

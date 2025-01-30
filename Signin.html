@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Logini.css">
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
     
@@ -13,38 +13,13 @@
         <h1 id="Login">Sign up</h1>
         <br>
         <p id="para">You already have an account? <a href="Login.html">Log in.</a></p>
-        <form id="signupForm">
-          <label for="firstName" class="pass"><b>First Name:</b></label>
-          <input 
-          type="text" 
-          name="firstName" 
-          id="firstName" 
-          placeholder="Enter your name" />
-        
-          <label for="lastName" class="pass"><b>Last Name:</b></label>
-          <input 
-          type="text" 
-          name="lastName" 
-          id="lastName" 
-          placeholder="Enter your last name" />
-        
-          <label for="email" class="pass"><b>Email:</b></label>
-          <input 
-          type="email" 
-          name="email" 
-          id="email" 
-          placeholder="Enter your email" />
-        
-
+        <form action="login_register.php" method="POST"> <!-- Pointing to the backend script -->
+          <label for="username" class="pass"><b>Email:</b></label>
+          <input type="email" name="username" id="username" placeholder="Enter your email" required />
           <label for="password" class="pass"><b>Password:</b></label>
-          <input 
-          type="password" 
-          name="password" 
-          id="password" 
-          placeholder="Enter your password" />
-        
-          <button type="button" id="button" onclick="signup()">Sign up</button>
-        </form>
+          <input type="password" name="password" id="password" placeholder="Enter your password" required />
+          <button type="submit" id="button" name="register">Sign up</button>
+      </form>
       </div>
       <script src="Projektneweb/signup.js"></script>
 </body>
