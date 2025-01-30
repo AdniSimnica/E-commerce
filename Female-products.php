@@ -61,14 +61,8 @@
     
 
     
-    <footer>
-        <p>Na kontaktoni:</p>
-        <ul>
-            <li>Email: Elefanti75@mail.com</li>
-            <li>Numri kontaktues: +38344111222</li>
-            <li>Adresa: Cagllavice, Prishtine, Kilometri i 6-te.</li>
-        </ul>
-    </footer>
+    <?php include 'footer.php'; ?>
+
 </body>
 
 

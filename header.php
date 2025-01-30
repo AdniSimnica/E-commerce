@@ -19,7 +19,7 @@ session_start();
         <a href="About-us.php">About Us</a> <!-- Changed .html to .php -->
     </nav>
 
-    <!-- Show login button or user name based on session -->
+    
     <?php if (isset($_SESSION["user_id"])): ?>
         <p style="margin-right: 10px;">Welcome, <?php echo $_SESSION["name"]; ?>! 
             <a href="logout.php" style="color: red;">Logout</a>
