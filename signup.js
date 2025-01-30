@@ -15,6 +15,6 @@ function signup() {
     } else if (password.length < 6) {
       alert("Password must be at least 6 characters long.");
     } else {
-      window.location.href = "Projektneweb/home.html"; 
+      window.location.href = "home.php"; 
     }
   }

@@ -12,7 +12,7 @@
         <br>
         <h1 id="Login">Sign up</h1>
         <br>
-        <p id="para">You already have an account? <a href="Login.html">Log in.</a></p>
+        <p id="para">You already have an account? <a href="Login.php">Log in.</a></p>
         <form action="login_register.php" method="POST"> <!-- Pointing to the backend script -->
           <label for="username" class="pass"><b>Email:</b></label>
           <input type="email" name="username" id="username" placeholder="Enter your email" required />
@@ -21,6 +21,6 @@
           <button type="submit" id="button" name="register">Sign up</button>
       </form>
       </div>
-      <script src="Projektneweb/signup.js"></script>
+      <script src="signup.js"></script>
 </body>
 </html>

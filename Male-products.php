@@ -9,70 +9,51 @@
 </head>
 <body>
     
-    <header class="header">
-        <a href="home.php" class="logo">
-            <img src="assets/logoo.png" alt="Logo" id="logoja">
-        </a>
-        <nav class="navbar">
-            <a href="home.php">Home</a>
-            <a href="products.html">Products</a>
-            <div class="category">
-                <a href="Categories.html">Categories</a>
-                <div class="dropdown">
-                    <a href="male-products.html">Male</a>
-                    <a href="female-products.html">Female</a>
-                </div>
-            </div>
-            <a href="About-us.html">About Us</a>
-        </nav>
-        <a href="../Login.html">
-            <button type="button" id="login" style="margin-right: 0px; margin-top: 15px; ">Log in</button>
-        </a>
-    </header>
+<?php include 'header.php'; ?>
     
     <section class="ourproducts">
         <h1>Produktet per Meshkuj</h1>
         <div class="product-container-1">
-            <a href="Products/product1.html" class="product-item">
+            <a href="Products/product1.php" class="product-item">
                 <img src="assets/product1.jpg" alt="Product 1">
                 <p>Initio Side Effect 90ml</p>
             </a>
-            <a href="Products/product2.html" class="product-item">
+            <a href="Products/product2.php" class="product-item">
                 <img src="assets/product2.jpg" alt="Product 2">
                 <p>Eau De Parfum Xerjoff " V " Erba Pura, 100 ml</p>
             </a> 
-            <a href="Products/product3.html" class="product-item">
+            <a href="Products/product3.php" class="product-item">
                 <img src="assets/product3.jpg" alt="Product 3">
                 <p>Jean Paul Gaultier Ultra Male 125 ml</p>
             </a> 
-            <a href="Products/product4.html" class="product-item">
+            <a href="Products/product4.php" class="product-item">
                 <img src="assets/product4.jpg" alt="Product 4">
                 <p>Tom Ford Oud Wood, 50ml</p>
             </a>
-            <a href="Products/product5.html" class="product-item">
+            <a href="Products/product5.php" class="product-item">
                 <img src="assets/product5.jpg" alt="Product 5">
                 <p>Jean Paul Gaultier Le beau, 100ml</p>
             </a>   
         </div>
         
         <div class="product-container-2">
-            <a href="Products/product6.html" class="product-item">
+            <a href="Products/product6.php" class="product-item">
                 <img src="assets/product6.jpg" alt="Product 6">
                 <p>Initio Side Effect 90ml</p>
             </a>    
-            <a href="Products/product7.html" class="product-item">
+            <a href="Products/product7.php" class="product-item">
                 <img src="assets/product7.jpg" alt="Product 7">
                 <p>Eau De Parfum Xerjoff " V " Erba Pura, 100 ml</p>
             </a>      
-            <a href="Products/product8.html" class="product-item">
+            <a href="Products/product8.php" class="product-item">
                 <img src="assets/product8.jpg" alt="Product 8">
                 <p>Tom Ford Tobacco Vanille</p>
             </a>
-            <a href="Products/product9.html" class="product-item">
+            <a href="Products/product9.php" class="product-item">
                 <img src="assets/product9.jpg" alt="Product 9">
                 <p>Guerlain L'Homme 50 ml</p>
             </a> 
-            <a href="Products/product10.html" class="product-item">
+            <a href="Products/product10.php" class="product-item">
                 <img src="assets/product10.jpg" alt="Product 10">
                 <p>Jean Paul Gaultier Le beau, 100ml</p>
             </a>   

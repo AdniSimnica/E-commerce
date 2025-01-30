@@ -62,6 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
             <button type="submit" id="button" name="login">Log In</button>
         </form>
     </div>
-    <script src="Projektneweb/login.js"></script>
+    <script src="login.js"></script>
   </body>
 </html>

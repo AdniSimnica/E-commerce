@@ -11,28 +11,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <header class="header">
-        <a href="home.php" class="logo">
-            <div class="img">
-                <img src="assets/logoo.png" alt="Logo" id="logoja">
-            </div>
-        </a>
-        <nav class="navbar">
-            <a href="home.php">Home</a>
-            <a href="products.html">Products</a>
-            <div class="category">
-                <a href="Categories.html">Categories</a>
-                <div class="dropdown">
-                    <a href="male-products.html">Male</a>
-                    <a href="female-products.html">Female</a>
-                </div>
-            </div>
-            <a href="About-us.html" class="active">About Us</a>
-        </nav>
-        <a href="../Login.php">
-            <button type="button" id="login" style="margin-right: 0px; margin-top: 15px; ">Log in</button>
-        </a>
-    </header>
+    <?php include 'header.php'; ?>
 
     <section class="about-us">
         <div class="about-content">

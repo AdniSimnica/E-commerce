@@ -9,26 +9,7 @@
 </head>
 <body>
     
-    <header class="header">
-        <a href="home.php" class="logo">
-            <img src="assets/logoo.png" alt="Logo" id="logoja">
-        </a>
-        <nav class="navbar">
-            <a href="home.php">Home</a>
-            <a href="products.html">Products</a>
-            <div class="category">
-                <a href="Categories.html">Categories</a>
-                <div class="dropdown">
-                    <a href="male-products.html">Male</a>
-                    <a href="female-products.html">Female</a>
-                </div>
-            </div>
-            <a href="About-us.html">About Us</a>
-        </nav>
-        <a href="../Login.html">
-            <button type="button" id="login" style="margin-right: 0px; margin-top: 15px; ">Log in</button>
-        </a>
-    </header>
+<?php include 'header.php'; ?>
     
     <section class="ourproducts">
         <h1>Parfume për Femra</h1>

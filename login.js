@@ -11,6 +11,6 @@ function login() {
     } else if (!emailPattern.test(username)) {
       alert("Please enter a valid email address.");
     } else {
-      window.location.href = "Projektneweb/home.html"; 
+      window.location.href = "home.php"; 
     }
   }
