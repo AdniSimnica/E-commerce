@@ -5,7 +5,7 @@ function signup() {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
   
-    // Email validation pattern
+   
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
     if (!firstName || !lastName || !email || !password) {

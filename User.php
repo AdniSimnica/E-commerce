@@ -1,13 +1,12 @@
 <?php
 class User {
     private $conn;
-    private $table = 'users'; // Your users table name
+    private $table = 'users'; 
 
     public function __construct($db) {
         $this->conn = $db;
     }
 
-    // Check if email already exists
     private function userExists($email) {
         $query = "SELECT id FROM " . $this->table . " WHERE email = :email";
         $stmt = $this->conn->prepare($query);
@@ -16,7 +15,6 @@ class User {
         return $stmt->fetch(PDO::FETCH_ASSOC) ? true : false;
     }
 
-    // Register a new user with a default role
     public function register($name, $email, $password, $role = 'user') {
         if ($this->userExists($email)) {
             return "Email already exists!";
@@ -33,7 +31,6 @@ class User {
         return $stmt->execute() ? true : "Registration failed!";
     }
 
-    // Login user
     public function login($email, $password) {
         $query = "SELECT * FROM " . $this->table . " WHERE email = :email";
         $stmt = $this->conn->prepare($query);
@@ -42,9 +39,9 @@ class User {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($user && password_verify($password, $user['password'])) {
-            return $user; // Return user data if login is successful
+            return $user; 
         }
-        return false; // Return false if login fails
+        return false; 
     }
 }
 ?>

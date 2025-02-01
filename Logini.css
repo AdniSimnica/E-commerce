@@ -5,7 +5,7 @@ body {
 
 
   
-.container { /* Fix the typo */
+.container { 
   display: flex;
   flex-direction: column;
   background: #c5c5c5;

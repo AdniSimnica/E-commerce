@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $db_name = 'e_commerce'; // Your database name
-    private $username = 'root'; // Default username for XAMPP/WAMP
-    private $password = ''; // Default password is empty
+    private $db_name = 'e_commerce'; 
+    private $username = 'root'; 
+    private $password = ''; 
     private $conn;
 
     public function connect() {

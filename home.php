@@ -3,7 +3,7 @@ include 'Database.php';
 $db = new Database();
 $conn = $db->connect();
 
-// Fetch latest 6 products from the database
+
 $stmt = $conn->prepare("SELECT * FROM products ORDER BY created_at DESC LIMIT 6");
 $stmt->execute();
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);

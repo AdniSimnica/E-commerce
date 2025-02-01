@@ -131,7 +131,7 @@ function createSliderItems() {
 function cloneSlides() {
   const allSlides = Array.from(sliderContainer.children);
 
-  const cloneCount = 1// Adjust to match the number of items visible
+  const cloneCount = 1
   const firstGroup = allSlides.slice(0, cloneCount);
   const lastGroup = allSlides.slice(-cloneCount);
 
@@ -152,7 +152,7 @@ function initializeSlider() {
 
   slideWidth = sliderContainer.firstElementChild.offsetWidth;
 
-  currentIndex = 1; // Adjust for 5 items
+  currentIndex = 1; 
   sliderContainer.style.transform = `translateX(-${
       currentIndex * slideWidth
   }px)`;
@@ -172,7 +172,7 @@ function moveToNextSlide() {
 
 function handleTransitionEnd() {
   const totalSlides = sliderContainer.children.length;
-  const cloneCount = 5; // Adjust to match the number of items visible
+  const cloneCount = 5; 
 
   if (currentIndex === totalSlides - cloneCount) {
       sliderContainer.style.transition = "none";

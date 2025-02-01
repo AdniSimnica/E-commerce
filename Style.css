@@ -1,4 +1,4 @@
-/* Basic Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body {
     justify-content: space-between;
 }
 
-/* Main content should take up the remaining space */
+
 main {
     flex: 1;
     width: 80%;
@@ -26,7 +26,7 @@ body{
     margin: 0px;
 
 }
-/* Navbar */
+
 .header {
     position: fixed;
     top: 0;
@@ -40,7 +40,7 @@ body{
     height: 90px;
 }
 
-/* Logo */
+
 .logo {
     margin-left: 100px;
     font-size: 32px;
@@ -54,7 +54,6 @@ body{
     width: auto;
 }
 
-/* Navbar links */
 .navbar {
     margin: 0 auto;
     justify-content: center;
@@ -73,7 +72,7 @@ body{
     margin-left: 40px;
 }
 
-/* Dropdown Menu */
+
 .category {
     position: relative;
     margin-top: 20px;
@@ -123,27 +122,27 @@ body{
 }
 
 .product-details-container {
-    display: flex; /* Përdor Flexbox për layout horizontal */
-    align-items: flex-start; /* Vendos div-et sipas fillimit vertikal */
-    gap: 20px; /* Hapësirë ndërmjet fotos dhe tekstit */
+    display: flex; 
+    align-items: flex-start; 
+    gap: 20px; 
     padding: 20px;
     margin: 20px;
 }
 
 .product-image-p2 img {
-    max-width: 300px; /* Përmasa e fotos */
-    height: auto; /* Ruaj raportin e duhur të fotos */
-    border-radius: 10px; /* Dizajni i këndshëm */
+    max-width: 300px; 
+    height: auto;
+    border-radius: 10px; 
 }
 
 .product-info {
-    flex: 1; /* Merr hapësirën që mbetet */
+    flex: 1; 
     padding: 10px;
     font-size: 16px;
     color: #333;
 }
 
-/* Product container */
+
 .product-container-1, .product-container-2, .product-container-3 {
     display: flex;
     flex-wrap: wrap;
@@ -182,7 +181,7 @@ body{
     transform: scale(1.05);
 }
 
-/* Footer */
+
 footer {
     background: #333;
     color: #fff;
@@ -201,7 +200,7 @@ footer ul li {
     margin: 0.5rem 0;
 }
 
-/* Button styles */
+
 button {
 
     

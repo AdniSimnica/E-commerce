@@ -13,7 +13,7 @@
         <h1 id="Login">Sign up</h1>
         <br>
         <p id="para">You already have an account? <a href="Login.php">Log in.</a></p>
-        <form action="login_register.php" method="POST"> <!-- Pointing to the backend script -->
+        <form action="login_register.php" method="POST"> 
           <label for="username" class="pass"><b>Email:</b></label>
           <input type="email" name="username" id="username" placeholder="Enter your email" required />
           <label for="password" class="pass"><b>Password:</b></label>
