@@ -1,51 +1,70 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+include 'Database.php';
 
-require_once 'Database.php';
-require_once 'User.php';
-
-$db = new Database();
-$conn = $db->connect();
-$user = new User($conn);
-
-// Handle registration
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name']; // Use "name" instead of "username"
     $email = $_POST['email'];
-    $role = 'user'; // Default role
+    $password = $_POST['password']; // Store as plain text for now
+    $role = $_POST['role']; // Role should be 'admin' or 'user'
 
-    // Check if the user is an admin (you can implement your own logic here)
-    if (isset($_POST['is_admin']) && $_POST['is_admin'] == '1') {
-        $role = 'admin';
+    $db = new Database();
+    $conn = $db->connect();
+
+    // Check if email already exists
+    $stmt = $conn->prepare("SELECT id FROM users WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+        echo "Error: Email already exists!";
+        exit();
     }
 
-    if ($user->register($username, $password, $email, $role)) {
-        echo "Registration successful!";
-        header("Location: Login.php"); // Redirect to login page
+    // Insert new user
+    $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (:name, :email, :password, :role)");
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':role', $role);
+    
+    if ($stmt->execute()) {
+        // Log the user in automatically after registration
+        $_SESSION['user_id'] = $conn->lastInsertId(); 
+        $_SESSION['username'] = $name;
+        $_SESSION['role'] = $role; 
+    
+        // Redirect based on role
+        if ($role == 'admin') {
+            header("Location: admin_dashboard.php");
+        } else {
+            header("Location: home.php");
+        }
         exit();
     } else {
-        echo "Registration failed!";
+        echo "Error registering user.";
     }
-}
-
-// Handle login
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $loggedInUser  = $user->login($username, $password);
-    if ($loggedInUser ) {
-        session_start();
-        $_SESSION['user_id'] = $loggedInUser ['id'];
-        $_SESSION['username'] = $loggedInUser ['username'];
-        $_SESSION['role'] = $loggedInUser ['role']; // Store user role in session
-        echo "Login successful! Welcome, " . $loggedInUser ['username'];
-        header("Location: home.php"); // Redirect to home page
-        exit();
-    } else {
-        echo "Login failed! Invalid username or password.";
-    }
+    
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form method="POST" action="login_register.php">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    
+    <select name="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <button type="submit">Register</button>
+</form>
+    
+</body>
+</html>

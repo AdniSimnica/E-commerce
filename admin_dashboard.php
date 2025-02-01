@@ -1,10 +1,7 @@
-<!-- admin_dashboard.php -->
 <?php
-session_start();
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Location: home.php"); // Redirect to home if not admin
-    exit();
-}
+include 'Database.php';
+$db = new Database();
+$conn = $db->connect();
 ?>
 
 <!DOCTYPE html>
@@ -13,18 +10,24 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/Style.css"> <!-- Link to your existing CSS file -->
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-<?php include 'header.php'; ?>
+    <h2>Admin Dashboard</h2>
+    
+    
+    <br><br>
 
-    <h1>Welcome, Admin <?php echo $_SESSION['username']; ?></h1>
-    <h2>Admin Options</h2>
-    <ul>
-        <li><a href="manage_users.php">Manage Users</a></li>
-        <li><a href="view_reports.php">View Reports</a></li>
-        <!-- Add more admin options as needed -->
-    </ul>
+    <nav>
+        <ul>
+            <li><a href="manage_products.php">Manage Products</a></li>
+            <li><a href="manage_news.php">Manage News</a></li>
+            <li><a href="manage_users.php">Manage Users</a></li>
+            <li><a href="manage_messages.php">Manage Messages</a></li>
+        </ul>
+    </nav>
+    <a href="home.php" class="admin-home-button" style=" padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Go to Home Page</a>
+    <br>
     <a href="logout.php">Logout</a>
 </body>
 </html>
