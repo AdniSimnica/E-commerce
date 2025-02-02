@@ -1,38 +1,42 @@
 <?php
+session_start(); 
+
 include 'Database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name']; 
-    $email = $_POST['email'];
-    $password = $_POST['password']; 
-    $role = $_POST['role']; 
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); 
+    $role = isset($_POST['role']) && $_POST['role'] === 'admin' ? 'admin' : 'user';
 
     $db = new Database();
     $conn = $db->connect();
 
-   
+    
     $stmt = $conn->prepare("SELECT id FROM users WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
+    
     if ($stmt->rowCount() > 0) {
         echo "Error: Email already exists!";
         exit();
     }
 
-    
+    // Insert new user
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (:name, :email, :password, :role)");
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password', $password);
     $stmt->bindParam(':role', $role);
-    
+
     if ($stmt->execute()) {
-       
-        $_SESSION['user_id'] = $conn->lastInsertId(); 
+        
+        $_SESSION['user_id'] = $conn->lastInsertId();
         $_SESSION['username'] = $name;
-        $_SESSION['role'] = $role; 
-    
-       
+        $_SESSION['email'] = $email;
+        $_SESSION['role'] = $role;
+
+        
         if ($role == 'admin') {
             header("Location: admin_dashboard.php");
         } else {
@@ -40,11 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         exit();
     } else {
-        echo "Error registering user.";
+        echo "Registration failed. Try again.";
     }
-    
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,3 +72,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 </body>
 </html>
+
