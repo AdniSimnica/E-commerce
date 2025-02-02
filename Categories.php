@@ -15,10 +15,10 @@
         <h1>Kategorite</h1>
         
         <div class="category-buttons">
-            <a href="male-products.html">
+            <a href="male-products.php">
                 <button class="category-button">Meshkuj</button>
             </a>
-            <a href="female-products.html">
+            <a href="female-products.php">
                 <button class="category-button">Femra</button>
             </a>
         </div>
