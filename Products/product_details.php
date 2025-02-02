@@ -53,10 +53,6 @@ if (!$product) {
                 <br>
                 <li><strong>Përshkrimi:</strong> <?php echo nl2br(htmlspecialchars($product['description'])); ?></li>
                 <br>
-                <li><strong>Paketimi:</strong> Produkti vjen në një paketim cilësor të përshtatur për brandin tonë.</li>
-                <br>
-                <li><strong>Aroma:</strong> Kategoritë e aromave sipas zgjedhjes së klientëve.</li>
-                <br>
                 <li><strong>Gjinia:</strong> <?php echo htmlspecialchars($product['gender']); ?></li>
             </ul>
         </div>
