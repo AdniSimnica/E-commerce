@@ -402,7 +402,7 @@ body {
   
   
     
-  .container { 
+  .container { /* Fix the typo */
     display: flex;
     flex-direction: column;
     background: #c5c5c5;

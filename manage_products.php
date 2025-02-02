@@ -9,7 +9,7 @@ include 'Database.php';
 $db = new Database();
 $conn = $db->connect();
 
-// Handle deleting products
+
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $stmt = $conn->prepare("DELETE FROM products WHERE id = :id");
@@ -19,7 +19,7 @@ if (isset($_GET['delete'])) {
     exit();
 }
 
-// Fetch all products
+
 $stmt = $conn->prepare("SELECT products.id, products.name, products.price, products.category, products.gender, users.name AS author, products.created_at 
                         FROM products 
                         LEFT JOIN users ON products.created_by = users.id 

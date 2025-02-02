@@ -10,17 +10,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = $_POST['category'] ?? '';
     $gender = $_POST['gender'] ?? 'Unisex';
 
-    // Validate input fields
+    
     if (empty($name) || empty($description) || empty($price) || empty($category) || empty($gender)) {
         die("Error: All fields are required.");
     }
 
-    // Validate price (must be a positive number)
+    
     if (!is_numeric($price) || $price <= 0) {
         die("Error: Price must be a positive number.");
     }
 
-    // Handle Image Upload
+    
     $image = NULL;
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         $image = basename($_FILES['image']['name']);
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: Image is required.");
     }
 
-    // Insert product into the database
+ 
     $stmt = $conn->prepare("INSERT INTO products (name, description, price, image, category, gender) VALUES (:name, :description, :price, :image, :category, :gender)");
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':description', $description);
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':gender', $gender);
 
     if ($stmt->execute()) {
-        header("Location: manage_products.php"); // Redirect to product management page
+        header("Location: manage_products.php"); 
         exit();
     } else {
         echo "Error adding product.";

@@ -3,12 +3,12 @@ include 'Database.php';
 $db = new Database();
 $conn = $db->connect();
 
-// Fetch all products ordered by gender
+
 $stmt = $conn->prepare("SELECT * FROM products ORDER BY gender, category, created_at DESC");
 $stmt->execute();
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Group products by gender and category
+
 $genders = ['Male' => [], 'Female' => [], 'Unisex' => []];
 foreach ($products as $product) {
     $genders[$product['gender']][] = $product;
@@ -42,7 +42,7 @@ foreach ($products as $product) {
 <section class="ourproducts">
     <h1>Our Products</h1>
 
-    <!-- Dropdown to Select Categories -->
+    
     <label for="category-filter">Select Category:</label>
     <select id="category-filter" onchange="filterCategory(this.value)">
         <option value="All">All</option>

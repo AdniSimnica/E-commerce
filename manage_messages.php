@@ -9,7 +9,6 @@ include 'Database.php';
 $db = new Database();
 $conn = $db->connect();
 
-// Fetch messages from database
 $stmt = $conn->prepare("SELECT * FROM contact_messages ORDER BY created_at DESC");
 $stmt->execute();
 $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -45,14 +44,12 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
             display: inline-block;
             margin-top: 20px;
             padding: 10px 15px;
-            background: #007BFF;
+            background:rgb(58, 58, 58);
             color: white;
             text-decoration: none;
             border-radius: 5px;
         }
-        a:hover {
-            background: #0056b3;
-        }
+       
     </style>
 </head>
 <body>
