@@ -1,3 +1,19 @@
+<?php
+include 'Database.php';
+$db = new Database();
+$conn = $db->connect();
+
+// Fetch all products ordered by gender
+$stmt = $conn->prepare("SELECT * FROM products ORDER BY gender, category, created_at DESC");
+$stmt->execute();
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Group products by gender and category
+$genders = ['Male' => [], 'Female' => [], 'Unisex' => []];
+foreach ($products as $product) {
+    $genders[$product['gender']][] = $product;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -5,113 +21,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elefanti75</title>
+    <title>Our Products</title>
     <link rel="stylesheet" href="Style.css">
+    <script>
+        function filterCategory(category) {
+            document.querySelectorAll('.product-category').forEach(section => {
+                if (category === 'All' || section.id === category) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </head>
 <body>
-    
+
 <?php include 'header.php'; ?>
-    
-    <section class="ourproducts">
-        <h1>Produktet</h1>
-        <div class="product-container-1">
-            <a href="Products/product1.php" class="product-item">
-                <img src="assets/product1.jpg" alt="Product 1">
-                <p>Initio Side Effect 90ml</p>
-            </a>
-            <a href="Products/product2.php" class="product-item">
-                <img src="assets/product2.jpg" alt="Product 2">
-                <p>Eau De Parfum Xerjoff " V " Erba Pura, 100 ml</p>
-            </a>
-            <a href="Products/product3.php" class="product-item">
-                <img src="assets/product3.jpg" alt="Product 3">
-                <p>Jean Paul Gaultier Ultra Male 125 ml</p>
-            </a>
-            <a href="Products/product4.php" class="product-item">
-                <img src="assets/product4.jpg" alt="Product 4">
-                <p>Tom Ford Oud Wood, 50ml</p>
-            </a>
-            <a href="Products/product5.php" class="product-item">
-                <img src="assets/product5.jpg" alt="Product 5">
-                <p>Jean Paul Gaultier Le beau, 100ml</p>
-            </a>   
-        </div>
-    
-        <div class="product-container-2">
-            <a href="Products/product6.php" class="product-item">
-                <img src="assets/product6.jpg" alt="Product 6">
-                <p>Initio Side Effect 90ml</p>
-            </a>
-            <a href="Products/product7.php" class="product-item">
-                <img src="assets/product7.jpg" alt="Product 7">
-                <p>Eau De Parfum Xerjoff " V " Erba Pura, 100 ml</p>
-            </a>
-            <a href="Products/product8.php" class="product-item">
-                <img src="assets/product8.jpg" alt="Product 8">
-                <p>Tom Ford Tobacco Vanille</p>
-            </a>
-            <a href="Products/product9.php" class="product-item">
-                <img src="assets/product9.jpg" alt="Product 9">
-                <p>Guerlain L'Homme 50 ml</p>
-            </a>
-            <a href="Products/product10.php" class="product-item">
-                <img src="assets/product10.jpg" alt="Product 10">
-                <p>Jean Paul Gaultier Le beau, 100ml</p>
-            </a>
-        </div>
-    
-        <div class="product-container-1">
-            <a href="Products/product11.php" class="product-item">
-                <img src="assets/product11.jpg" alt="Product 11">
-                <p>Chanel Coco Mademoiselle, 100ml</p>
-            </a>
-            <a href="Products/product12.php" class="product-item">
-                <img src="assets/product12.jpg" alt="Product 12">
-                <p>Yves Saint Laurent Libre, 90ml</p>
-            </a>
-            <a href="Products/product13.php" class="product-item">
-                <img src="assets/product13.jpg" alt="Product 13">
-                <p>Dolce & Gabbana Light Blue, 100ml</p>
-            </a>
-            <a href="Products/product14.php" class="product-item">
-                <img src="assets/product14.jpg" alt="Product 14">
-                <p>Lancome La Vie Est Belle, 75ml</p>
-            </a>
-            <a href="Products/product15.php" class="product-item">
-                <img src="assets/product15.jpg" alt="Product 15">
-                <p>Gucci Bloom, 100ml</p>
-            </a>
-        </div>
-    
-        <div class="product-container-2">
-            <a href="Products/product16.php" class="product-item">
-                <img src="assets/product16.jpg" alt="Product 16">
-                <p>Marc Jacobs Daisy, 100ml</p>
-            </a>
-            <a href="Products/product17.php" class="product-item">
-                <img src="assets/product17.jpg" alt="Product 17">
-                <p>Dior J'adore, 100ml</p>
-            </a>
-            <a href="Products/product18.php" class="product-item">
-                <img src="assets/product18.jpg" alt="Product 18">
-                <p>Versace Bright Crystal, 90ml</p>
-            </a>
-            <a href="Products/product19.php" class="product-item">
-                <img src="assets/product19.jpg" alt="Product 19">
-                <p>Armani Si, 100ml</p>
-            </a>
-            <a href="Products/product20.php" class="product-item">
-                <img src="assets/product20.jpg" alt="Product 20">
-                <p>Carolina Herrera Good Girl, 80ml</p>
-            </a>
-        </div>
-    </section>
-    
-    
-    
-    <?php include 'footer.php'; ?>
+
+<section class="ourproducts">
+    <h1>Our Products</h1>
+
+    <!-- Dropdown to Select Categories -->
+    <label for="category-filter">Select Category:</label>
+    <select id="category-filter" onchange="filterCategory(this.value)">
+        <option value="All">All</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Unisex">Unisex</option>
+    </select>
+
+    <?php foreach ($genders as $gender => $products): ?>
+        <?php if (!empty($products)): ?>
+            <div class="product-category" id="<?php echo $gender; ?>">
+                <h2 class="gender-title"><?php echo htmlspecialchars($gender); ?></h2>
+                <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    <?php foreach ($products as $product): ?>
+                        <a href="Products/product_details.php?id=<?php echo $product['id']; ?>" class="product-item" style="width: 200px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+                            <div class="product-image" style="width: 180px; height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                <img src="assets/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+                            <p><strong>Price: €<?php echo number_format($product['price'], 2); ?></strong></p>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</section>
+
+<?php include 'footer.php'; ?>
 
 </body>
-
-
 </html>
