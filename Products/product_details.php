@@ -33,7 +33,10 @@ if (!$product) {
 
     <div class="product-details-container">
         <div class="product-image-p2">
-            <img src="../assets/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+        <img src="../assets/<?php echo htmlspecialchars($product['image']); ?>" 
+     alt="<?php echo htmlspecialchars($product['name']); ?>" 
+     style="width: 300px; height: 500px; object-fit: cover; border-radius: 10px;">
+
         </div>
         <div class="product-info">
             <h1><?php echo htmlspecialchars($product['name']); ?></h1>
