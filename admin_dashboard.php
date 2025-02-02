@@ -13,6 +13,7 @@ $conn = $db->connect();
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
+<?php include 'header.php'; ?>
     <h2>Admin Dashboard</h2>
     
     
@@ -26,7 +27,7 @@ $conn = $db->connect();
             <li><a href="manage_messages.php">Manage Messages</a></li>
         </ul>
     </nav>
-    <a href="home.php" class="admin-home-button" style=" padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Go to Home Page</a>
+    
     <br>
     <a href="logout.php">Logout</a>
 </body>

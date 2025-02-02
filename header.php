@@ -20,7 +20,7 @@ session_start();
     <?php if (isset($_SESSION["user_id"])): ?>
         <div class="user-actions" style="display: flex; align-items: center; gap: 10px; margin-right: 10px;">
             <span style="font-weight: bold;"> <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : "Guest"; ?> </span>
-            <a href="/E-commerce/logout.php" style="background-color: blue; color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;">Logout</a>
+            <a href="/E-commerce/logout.php" style="background-color: black; color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;">Logout</a>
         </div>
     <?php else: ?>
         <a href="/E-commerce/Login.php">
